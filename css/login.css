@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Rubik+Mono+One&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(to right, rgb(190, 180, 140) 30%, rgb(0, 84, 95)100%);
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    margin: 6.5rem 0 0 0;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-basis: 36%;
+  }
+
+  .img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo .img .product-image {
+    width: 150%;
+    height: 780px;
+    background-color: rgba(140, 140, 140, 0.5);
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    margin: -.2rem 2rem -20rem -15rem;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 50%, 0% 0%);
+  }
+
+  .logo .img img {
+    margin: -20rem 5rem 0 -5rem;
+  }
+
+  h2 {
+    color: rgb(125, 245, 215);
+    font-family: 'Marck Script', cursive;
+    font-size: 35px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-top: 30px;
+  }
+
+  span {
+    font-family: 'Rubik Mono One', cursive;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .form-container {
+    bottom: 0;
+    background: rgba(255, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+  }
+
+  .form-control {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+  }
+
+  .form-control .input {
+    background-color: rgb(169, 169, 169);
+    border: 2px solid rgb(169, 169, 169);
+    border-radius: 25px;
+    display: block;
+    box-sizing: border-box;
+    color: rgb(10, 10, 10);
+    font-size: 16px;
+    padding: 14px 10px;
+    min-width: 100%;
+    outline: 0;
+    font-weight: 800;
+    letter-spacing: .75px;
+    text-indent: 10px;
+  }
+
+  .form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .form-control input:focus {
+    border-color: rgb(255, 110, 0);
+  }
+
+  .space-title {
+    background-color: rgb(25, 25, 45);
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -22px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform 400ms;
+    width: 9rem;
+  }
+
+  .input:focus~.space-title,
+  .input:not(:placeholder-shown)~.space-title {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
+  .placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 400ms, color 400ms;
+    top: 20px;
+    font-family: 'Rubik Mono One', cursive;
+    font-size: 1vw;
+  }
+
+  .input:focus~.placeholder,
+  .input:not(:placeholder-shown)~.placeholder {
+    margin-left: 7.5px;
+    transform: translateY(-30px) translateX(5%) scale(0.75);
+  }
+
+  .input:not(:placeholder-shown)~.placeholder {
+    color: rgb(130, 130, 150);
+  }
+
+  .input:focus~.placeholder {
+    color: rgb(255, 110, 0);
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #submit {
+    border: 0;
+    border-radius: 12px;
+    background-color: rgb(210, 190, 150);
+    height: 50px;
+    width: 75%;
+    color: rgb(0, 85, 95);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: .5em;
+  }
+
+  #submit:active, #submit:hover {
+    background-color: rgb(210, 190, 150, 0.8);
+  }
+
+  a {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+
+  a:after {
+    content: "";
+    display: block;
+    margin-top: 8px;
+  }  
+
+  a:hover:after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 80%;
+    border-bottom: 3px solid rgb(125, 245, 215);
+    margin-top: 5px;
+    animation: fade-in 1s;
+  }
+
+  span.msg {
+    font-family: 'JetBrains Mono';
+    color: rgb(130, 0, 0);
+    text-indent: 2px;
+    font-size: 20px;
+    font-weight: 900;
+    margin: auto;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      width: 10%;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@media only screen and (max-width: 48rem) { 
+  body {
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgb(190, 180, 140) 10%, rgb(0, 84, 95)100%);
+    height: 94.8vh;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+
+  span {
+    font-size: 20px;
+  }
+
+  span.msg {
+    font-size: 12px;
+  }
+  
+  span.errormsg {
+    font-size: 9px;
+  }
+
+  .parent {
+    margin-top: 2.5rem;
+  }
+
+  .logo {
+    flex-basis: 25%;
+    margin-top: -3rem;
+  }
+
+  .logo .img img {
+    width: 16rem;
+    height: 16rem;
+    margin-top: -15rem;
+    margin-bottom: 2rem;
+    margin-right: -5rem;
+    z-index: 10;    
+  }
+
+  .logo .img .product-image {
+    width: 420px;
+    height: 220px;
+    margin: 0;
+    clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0, 0% 0%);
+  } 
+
+  .container {
+    flex-basis: 85%;
+    margin: 0;
+  }
+
+  .form-container {
+    padding: 15px;
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .form-control .input {
+    font-size: 13px;
+    font-weight: 750;
+  }
+
+  .space-title {
+    height: 17px;
+    width: 85px;
+  }
+
+  .space-title.conpass {
+    width: 130px;
+  }
+
+  .placeholder {
+    top: 15px;
+    font-size: 12px;
+  }
+
+  .input:focus~.placeholder,
+  .input:not(:placeholder-shown)~.placeholder {
+    margin-left: 7.5px;
+    transform: translateY(-25px) translateX(3%) scale(0.75);
+  }
+
+  button {
+    height: 40px;
+    width: 65%;
+    font-size: 14px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+} 
